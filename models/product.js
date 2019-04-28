@@ -27,4 +27,8 @@ module.exports = class Product {
   static findById(id) {
     return db.execute('SELECT * FROM products WHERE products.id = ?', [id])
   }
+
+  static updateById(id) {
+    return db.execute('UPDATE `node-ecommerce`.`products` SET `title` = '+ product.title + ', `description` = ' + product.description + ', `imageUrl` = '+ product.imageUrl + ', `price` = '+ product.price + ' WHERE (`id` = '+ product.id + ')')
+  }
 };
